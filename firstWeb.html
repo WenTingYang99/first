@@ -2,9 +2,159 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>无标题文档</title>
+<title>无标题文档</title>	
+	<style type="text/css">
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var a=document.getElementsByName("aa");
+			for(var i=0;i<a.length;i++){
+				a[i].onclick=function(){
+					//统计已选中的数量
+					var count=0;
+					for(var j=0;j<a.length;j++){
+						if(a[j].checked){
+							count++;
+						}
+					}
+					//判断是否全部选中
+					if(count==a.length){
+						document.getElementById("all").checked=true;
+					}else{
+						document.getElementById("all").checked=false;
+					}
+					
+				}
+			}
+		}
+	function inputss(){		
+		
+		 var rr=document.createElement("tr");
+		console.log(rr);
+
+		for(var i=0;i<5;i++){
+			var dd=document.createElement("td");
+			var text=document.createTextNode(i);
+			dd.appendChild(text);
+			rr.appendChild(dd);
+		}
+		console.log(rr);
+		var tt=document.getElementById("myul");
+		tt.appendChild(rr);
+	}
+		
+		function includess(){	
+			var text=document.getElementById("add");
+			var news=document.getElementById("mul");
+			var t=text.value;
+			if(t==""){t=prompt("不可为空！","有一说一");}
+			var a=document.createTextNode(t);
+			var s=document.createElement("li");
+			s.appendChild(a);
+			news.appendChild(s);
+			text.value="";
+		}
+		
+		function chack(){
+			var a=document.getElementsByName("aa");
+			var number=0;
+			for(var i=0;i<a.length;i++){
+				if(a[i].checked)
+				console.log(a[i].value);
+			}
+		}
+		
+		function chack1(){
+			var a=document.getElementById("select");
+			console.log(a.value);
+		}
+		
+		function selectall(){
+			var select=document.getElementById("all");
+			var sel=document.getElementsByName("aa");
+			if(select.checked){
+				for(var i=0;i<sel.length;i++){
+					sel[i].checked=true;
+				}
+			}
+			else{
+				for(var i=0;i<sel.length;i++){
+					sel[i].checked=false;
+				}
+			}
+		}
+			
+		function searchbyBaidu(){
+			var s=document.getElementById("searchbyd");
+			var t=document.getElementById("searchtext");
+			var b=document.getElementById("aaaaaaaa");
+			b.value="用百度搜索";
+			t.name="wd";
+			s.action="https://www.baidu.com/s";		
+			console.log("baidu");
+		}
+		
+		function searchbyBiying(){
+			var s=document.getElementById("searchbyd");
+			var t=document.getElementById("searchtext");
+			var b=document.getElementById("aaaaaaaa");
+			b.value="用必应搜索";
+			t.name="q";
+			s.action="https://cn.bing.com/search";	
+			console.log("biying");
+		}
+	</script>
+
 </head>
 
 <body>
-</body>
+	
+<input type="button" value="增加一行" onclick="inputss()">
+<table id="myul" border="6px" width="400px">
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+		<td>4</td>
+		<td>5</td>
+	</tr>
+</table>
+	<hr>
+	<div id="comments">
+		<ul id="mul" style="list-style: none; font-size: 12px;">
+			<li>aaaaa</li>
+		</ul>
+	</div>
+	<div>
+	<textarea style="width: 400px;height: 100px;" id="add" placeholder="请输入" ></textarea>
+	<input  id="aaaa" type="button" value="添加评论" onclick="includess()" onMouseOver="turn()" onMouseOut="turn1()">
+	</div>
+	<hr>
+	<input type="checkbox" id="all" onClick="selectall()"><label for="all">全选</label>
+	<input type="checkbox" name="aa" id="aa" value="a"><label for="aa">a</label>
+	<input type="checkbox" name="aa" id="bb" value="b"><label for="bb">b</label>
+	<input type="checkbox" name="aa" id="cc" value="c"><label for="cc">c</label>
+	<input type="checkbox" name="aa" id="dd" value="d"><label for="dd">d</label>
+	<input type="button" value="提交" onClick="chack()">
+	<hr>
+	<select id="select">
+		<option  value="a">a</option>
+    	<option  value="b">b</option>
+		<option  value="c">c</option>
+	</select>
+	<input type="button" value="提交" onClick="chack1()">
+	<hr>
+	
+	<div>
+		<input type="radio" name="aaaaaaa" value="a" id="a" onClick="searchbyBaidu()"><label for="a">百度搜索</label>
+		<input type="radio" name="aaaaaaa" value="b" id="b" onClick="searchbyBiying()"><label for="b">必应搜索</label>
+	</div>
+
+	<form action="" id="searchbyd">
+	<input type="text" placeholder="请输入要搜索的信息" id="searchtext" name="text">
+	<input  type="submit" value="用百度搜索" id="aaaaaaaa">
+	</form>
+<hr>
+	
+	</body>
 </html>

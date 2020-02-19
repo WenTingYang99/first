@@ -1,0 +1,93 @@
+<!doctype html>
+<!--轮播图片-->
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+	<style type="text/css">
+		.hidden{
+			display: none;
+		}
+		
+		#div1{
+			position: absolute;
+			top:200px;
+			left: 20px;
+
+		}
+		img{
+			height: 200px;
+			width: 200px;
+			border: 2px solid black;
+		}
+		a{
+			float: left;
+			border:1px solid rgba(138,138,138,1.00);
+			background-color: rgba(151,151,151,0.5);
+			height: 20px;
+			width: 20px;
+			color: #FFF;
+			text-align: center;
+			line-height: 20px;
+			font-size: 12px;
+			margin-right: 2px;
+		}
+		#div2{
+			position: absolute;
+			top: 380px;
+			left:130px;
+		}
+	
+	</style>
+	<script type="text/javascript">
+		var max=4;//四张图
+		var now=1;//默认显示第一张图
+		var timer;//计时器
+		
+		function show(flag){
+			if(flag){
+				now=flag;
+				clearTimeout(timer);
+			}
+			
+			var number=document.getElementsByTagName("img");
+			for(var i=1;i<=max;i++){
+				if(i==now){
+					number[i-1].style.display="block";
+				}
+				else{
+					number[i-1].style.display="none";
+				}
+			}						
+			if(now==max){
+				now=1;
+			}else{
+				now++;
+			}
+			timer=setTimeout(show,3000);
+		}
+		
+		window.onload=function(){
+			show();
+		};
+		
+	</script>
+</head>
+
+<body>
+	<div id="div1">	
+		<img src="image/-1cb5e9573e1d8dd8.jpg" id="1" alt="1">
+		<img src="image/1526734935519.jpeg" id="2" alt="2" class="hidden">
+		<img src="image/1526734939654.jpeg" id="3" alt="3" class="hidden">
+		<img src="image/1526735035942.jpeg" id="4" alt="4" class="hidden">		
+	</div>
+	
+	<div id="div2">
+	 <a onMouseOver="show(1)">1</a>
+	 <a onMouseOver="show(2)">2</a>	
+	 <a onMouseOver="show(3)">3</a>
+	 <a onMouseOver="show(4)">4</a>
+	</div>
+	
+</body>
+</html>

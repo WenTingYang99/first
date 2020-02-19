@@ -1,0 +1,212 @@
+
+<!doctype html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<title>我的网页</title>
+
+<style type="text/css">
+
+
+
+	body{
+
+		background-image: url("image/timg.jpg");
+
+		background-size: 100% 100%;
+
+		background-repeat: no-repeat;
+
+		background-size: cover;
+
+/*		opacity: 0.5;*/
+
+	}
+
+	.divsize{
+
+		box-sizing: border-box;
+
+		height: 400px;
+
+		width: 1400px;
+
+/*		border: solid 2px blue ;*/
+
+		margin: auto;
+
+		padding-top: 40px;
+
+		background:rgba(255,255,255,0.3)
+
+	}
+
+	.divsizediv{
+
+		height: 300px;
+
+		width: 300px;
+
+		float:left;
+
+		margin-left: 37px;
+
+		position: relative;
+
+/*		border:solid 1px black;*/
+
+	}
+
+	.divsizediv:after {
+
+    position: absolute;
+
+    content: '';
+
+    width: 100%;
+
+    height: 100%;
+
+    top: 0;
+
+    left: 0;
+
+    box-shadow:0 0 60px 10px #FFF inset;/*inset设置阴影朝内*/
+
+}
+
+	.mask {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 300px;
+
+    height: 300px;
+
+    background: rgba(101, 101, 101, 1);
+
+    color: #ffffff;
+
+    opacity: 0;
+
+	text-align: center;
+
+	line-height: 300px;/*使这行文字实际占用的高度和div高度相同*/
+
+	transition: opacity 1s;
+
+}
+
+	.divsizediv:hover .mask {
+
+    opacity: 0.6;           
+
+}
+
+
+
+	.size{
+
+		height: 300px;
+
+		width:300px;
+
+	}
+
+</style>
+
+	
+
+</head>
+
+
+
+<body>
+
+	<div>
+
+	<h1 align="center" style="color: black;">请选择</h1>
+
+	<hr>
+
+	<div class="divsize">
+
+		<a href="showknow.html" target="_blank">
+
+		<div class="divsizediv">
+
+			<img class="size" src="E:\BaiduNetdiskDownload\1526734935519.jpeg" alt="tu1">
+
+			<div class="mask">
+
+				<h1>是什么</h1>           
+
+            </div>
+
+		</div>	
+
+		</a>
+
+		<a href="salf-study.html" target="_blank">
+
+        <div class="divsizediv">
+
+	        <img class="size" src="image/qqq.jpg" alt="tu2">
+
+			<div class="mask">
+
+               <h1>小故事</h1>
+
+            </div>
+
+	    </div>
+
+		</a>
+
+		<a href="propect.html" target="_blank">
+
+		<div class="divsizediv">
+
+			<img class="size" src="image/qqq.jpg" alt="tu3">
+
+			<div class="mask">
+
+               <h1>预防</h1>
+
+            </div>
+
+		</div>
+
+		</a>
+
+		<a href="else.html" target="_blank">
+
+		<div class="divsizediv">
+
+			<img class="size" src="image/qqq.jpg" alt="tu4">
+
+			<div class="mask">
+
+               <h1>小测试</h1>
+
+            </div>
+
+		</div>
+
+		</a>
+
+	</div>
+
+	</div>
+
+</body>
+
+</html>
